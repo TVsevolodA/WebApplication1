@@ -1,0 +1,35 @@
+﻿@model WebApplication1.Models.User
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Авторизация</title>
+</head>
+<body>
+    <form method="post" action="~/Home/Registration">
+        <div>
+            <label asp-for="Login" class="control-label">Логин:</label>
+            <input asp-for="Login" class="form-control" type="text" name="Login" required>
+            <span asp-validation-for="Login" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="Password" class="control-label">Пароль:</label>
+            <input asp-for="Password" class="form-control" id="password1" type="password" name="Password" required>
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="СheckPassword" class="control-label">Повторите пароль:</label>
+            <input asp-for="СheckPassword" class="form-control" id="password2" type="password" name="СheckPassword" required>
+            <span asp-validation-for="СheckPassword" class="text-danger"></span>
+        </div>
+        <div>
+            <input id="button" type="submit" value="Отправить" />
+        </div>
+    </form>
+</body>
+</html>
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.2.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.8.1/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>

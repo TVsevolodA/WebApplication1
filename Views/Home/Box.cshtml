@@ -1,0 +1,50 @@
+﻿@model WebApplication1.Models.Form
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+    @using (Html.BeginForm("Box", "Home", FormMethod.Post))
+    {
+        <div>
+            @Html.TextBoxFor(model => model.InputField)
+        </div>
+
+        var mySelectItems = new List<SelectListItem>
+{
+                new SelectListItem { Text = "First item", Value = "First item" },
+                new SelectListItem { Text = "Second item", Value = "Second items" }
+                };
+        <div>
+            @Html.ListBoxFor(m => m.ListBoxField, mySelectItems)
+        </div>
+
+
+        var myDropDownList = new List<SelectListItem>
+{
+                new SelectListItem { Text = "C#", Value = "C#" },
+                new SelectListItem { Text = "Java", Value = "Java" }
+                };
+        <div>
+            @Html.DropDownListFor(m => m.DropDownListField, myDropDownList)
+        </div>
+
+
+        <div>
+            <span>М</span>
+            @Html.RadioButtonFor(m => m.SelectedAnswer, "M")
+            <span>Ж</span>
+            @Html.RadioButtonFor(m => m.SelectedAnswer, "Ж")
+        </div>
+
+
+        <input type="submit" value="Res" />
+    }
+    <label id="Result" name="Result">@ViewData["Result"]</label>
+
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿@model WebApplication1.Models.Form
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <label id="Result" name="Result">
+        @{
+            @Model.InputField
+            @Model.ListBoxField
+            @Model.DropDownListField
+            @Model.SelectedAnswer
+        }
+        </label>
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+﻿@model WebApplication1.Models.User
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div>
+        @Html.TextBoxFor(model => model.Login, new { placeholder = "Логин" })
+        @Html.ValidationMessageFor(model => model.Login)
+    </div>
+    <div>
+        @Html.TextBoxFor(model => model.Password, new { placeholder = "Пароль" })
+        @Html.ValidationMessageFor(model => model.Password)
+    </div>
+    <div>
+        <input type="submit" value="submit">
+    </div>
+}
